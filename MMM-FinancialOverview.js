@@ -54,8 +54,13 @@ Module.register("MMM-FinancialOverview", {
             var value = document.createElement("div");
             value.innerHTML = item.value;
             value.style.fontSize = "2.5em";
-            itemWrapper.appendChild(value);
 
+            // Check if the value is negative and apply red color
+            if (parseFloat(item.value) < 0) {
+                value.style.color = "red";
+            }
+
+            itemWrapper.appendChild(value);
             wrapper.appendChild(itemWrapper);
         });
 
